@@ -176,3 +176,133 @@ app.tipsLogo = {
     },
 };
 
+app.contact = {
+    init: function () {
+        $(".contact h1").blast({
+            delimiter: "character",
+            tag: "span",
+        });
+        a = 0;
+        $(".contact .blast").each(function () {
+            var el = $(this);
+            setTimeout(function () {
+                el.addClass("animated bounceIn");
+            }, a);
+            a = a + 100;
+        });
+        setTimeout(function () {
+            $(".contact .blast").removeClass("animated bounceIn");
+            $(".contact .blast").css("opacity", 1);
+            $(".contact .blast").mouseenter(function () {
+                var el = $(this);
+                $(this).addClass("animated rubberBand");
+                $(this).one(
+                    "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+                    function () {
+                        el.removeClass("animated rubberBand");
+                    }
+                );
+            });
+        }, 1000);
+        b = 300;
+        $(".contact li").each(function () {
+            var el = $(this);
+            setTimeout(function () {
+                el.addClass("animated fadeInUp");
+            }, b);
+            b = b + 100;
+        });
+        initMap();
+        $("#submit").click(function () {
+            var inputs = new Array();
+            var formInputs = $("#contact :input");
+            formInputs.each(function (el) {
+                inputs[formInputs[el].name] = formInputs[el];
+            });
+
+            app.contact.validate();
+            if ($(".contact-form .required").size() > 0) {
+                alertify.error(msg1);
+            } else {
+                alertify.log(msg2);
+                var data = {
+                    service_id: "gmail",
+                    template_id: "template_k74jwaa", // keys from email.js
+                    user_id: "9XorAWqz2R31Ye3-E", // keys from email.js
+                    template_params: {
+                        name: inputs["name"].value,
+                        subject: inputs["subject"].value,
+                        message: inputs["msg"].value,
+                        email: inputs["email"].value,
+                    },
+                };
+
+                $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
+                    type: "POST",
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                })
+                    .done(function () {
+                        alertify.success(msg3);
+                        $(".contact-form .required").removeClass("required");
+                        $(
+                            '.contact-form input[type="text"],.contact-form input[type="email"],.contact-form textarea'
+                        ).val("");
+                    })
+                    .fail(function (error) {
+                        $(".contact-form .required").removeClass("required");
+                        $(
+                            '.contact-form input[type="text"],.contact-form input[type="email"],.contact-form textarea'
+                        ).val("");
+                        alertify.error(msg4);
+                    });
+            }
+            return false;
+        });
+        $(".contact-form input, .contact-form textarea").keyup(function () {
+            app.contact.validate();
+        });
+    },
+    validate: function () {
+        if (
+            $("input[type=email]").val() == "" ||
+            !validateEmail($("input[type=email]").val())
+        ) {
+            $("input[type=email]").parent().addClass("required");
+        } else {
+            $("input[type=email]").parent().removeClass("required");
+        }
+        if ($("textarea").val() == "") {
+            $("textarea").parent().addClass("required");
+        } else {
+            $("textarea").parent().removeClass("required");
+        }
+    },
+};
+
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+}
+
+function initMap() {
+    // position we will use later
+    var lat = 18.6391;
+    var lon = 73.7809;
+    // initialize map
+    map = L.map("map").setView([lat, lon], 15);
+    // set map tiles source
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+    }).addTo(map);
+    // add marker to the map
+    marker = L.marker([lat, lon]).addTo(map);
+    // add popup to the marker
+    marker.bindPopup("<b>Utkarsh Tambe lives here.</b><br />Can plan to meet me.<br />").openPopup();
+    setTimeout(function () {
+        $(".inf-map").addClass("animated fadeInUp");
+        $("#map").css("opacity", 1);
+    });
+}
