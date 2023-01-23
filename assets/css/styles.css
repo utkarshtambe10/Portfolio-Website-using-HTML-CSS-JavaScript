@@ -4500,6 +4500,7 @@ a img.aligncenter {
     animation-name: slideOutUp
 }
 
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 html {
@@ -5496,73 +5497,232 @@ body.no-overflow {
     display: block
 }
 
-.preloader {
-    position: fixed;
-    will-change: transform;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: #022c43;
-    z-index: 2;
-    display: none;
-    overflow: hidden;
-    height: 100%;
-    width: 100%
-}
-
-.preloader .inner {
+.container.about .text-zone {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 400px;
-    max-width: 100%;
-    height: 160px;
-    text-align: center
+    left: 10%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 35%;
+    vertical-align: middle;
+    display: table-cell;
+    max-height: 90%
 }
 
-.preloader .inner>img {
-    width: 120px;
-    display: block;
-    margin: 0 auto
+.container.tips .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    vertical-align: middle;
+    display: table-cell;
+    max-height: 90%;
+    width: 85%;
 }
 
-.preloader .inner>span {
-    color: #8d8d8d;
-    margin-top: 9px;
-    font-size: 9px;
-    font-family: "Open Sans", sans-serif;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    display: block
+#tips-post-container {
+    overflow: auto;
+    max-height: 70vh;
+    text-align: center;
 }
 
-.preloader .progress-bar {
-    text-align: left
+.container.tips .simplebar-scrollbar:before {
+    background: #FFD701;
 }
 
-.preloader .progress-bar_bg {
-    height: 1px;
-    background: #047765
+.container.tips .simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1;
 }
 
-.preloader .progress-bar_bg div {
-    height: 1px;
-    background: #ffd700;
-    width: 0
+.container.tips .tips-image {
+    height: 50vh;
 }
 
-.preloader .progress-bar span {
-    color: #fff;
-    text-align: right;
-    float: left;
-    font-size: 27px;
+.container.tips .tips-text {
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    margin: 30px auto 0 auto;
+}
+
+.container.tips .tips-tech-logo {
+    width: 100px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 15px;
+    transition-duration: 0.2s;
+}
+
+.container.tips .inner-div-container {
+    background: rgba(25, 25, 25, 0.5);
+    padding: 0 15px 15px;
+    margin: 10px auto;
+    width: fit-content;
+    clear: both;
+}
+
+.container.tips .tips-text {
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto 0 auto;
+    font-weight: bold !important;
+}
+
+.container.tips .tips-tech-logo:hover {
+    transform: scale(1.5);
+}
+
+.container.tips .tips-logo-cont {
+    text-align: center;
+}
+
+.container.about .text-zone h1,
+.container.tips .text-zone h1 {
+    font-size: 53px;
     font-family: font-file-82132;
-    margin-bottom: 10px;
-    display: block
+    color: #ffd700;
+    font-weight: 400;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px;
+    left: -10px
+}
+
+.container.about h1 .blast,
+.container.tips h1 .blast {
+    will-change: transform;
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out
+}
+
+.container.skills h1 .blast:hover,
+.container.about h1 .blast:hover,
+.container.tips h1 .blast:hover {
+    color: #fff;
+}
+
+.container.contact h1 .blast:hover {
+    color: #fff;
+}
+
+.container.about .text-zone h1:before,
+.container.tips .text-zone h1:before {
+    content: '<h1>';
+    font-family: 'La Belle Aurore', cursive;
+    color: #ffd700;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -10px;
+    left: -10px;
+    opacity: 0.6;
+    line-height: 18px;
+}
+
+.container.about .text-zone h1:after,
+.container.tips .text-zone h1:after {
+    content: '<h1/>';
+    font-family: 'La Belle Aurore', cursive;
+    color: #ffd700;
+    font-size: 18px;
+    line-height: 18px;
+    position: absolute;
+    left: -30px;
+    bottom: -20px;
+    margin-left: 20px;
+    opacity: 0.6;
+}
+
+.container.about .text-zone p,
+.container.tips .text-zone p {
+    font-size: 13px;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    max-width: fit-content;
+}
+
+@-webkit-keyframes spincube {
+
+    from,
+    to {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16% {
+        -webkit-transform: rotateY(-90deg);
+    }
+
+    33% {
+        -webkit-transform: rotateY(-90deg) rotateZ(90deg);
+    }
+
+    50% {
+        -webkit-transform: rotateY(-180deg) rotateZ(90deg);
+    }
+
+    66% {
+        -webkit-transform: rotateY(-270deg) rotateX(90deg);
+    }
+
+    83% {
+        -webkit-transform: rotateX(90deg);
+    }
+}
+
+@keyframes spincube {
+
+    from,
+    to {
+        -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16% {
+        -moz-transform: rotateY(-90deg);
+        -ms-transform: rotateY(-90deg);
+        transform: rotateY(-90deg);
+    }
+
+    33% {
+        -moz-transform: rotateY(-90deg) rotateZ(90deg);
+        -ms-transform: rotateY(-90deg) rotateZ(90deg);
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+
+    50% {
+        -moz-transform: rotateY(-180deg) rotateZ(90deg);
+        -ms-transform: rotateY(-180deg) rotateZ(90deg);
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+
+    66% {
+        -moz-transform: rotateY(-270deg) rotateX(90deg);
+        -ms-transform: rotateY(-270deg) rotateX(90deg);
+        transform: rotateY(-270deg) rotateX(90deg);
+    }
+
+    83% {
+        -moz-transform: rotateX(90deg);
+        -ms-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+    }
+}
+
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
 }
 
 .cubespinner {
