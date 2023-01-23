@@ -5055,3 +5055,154 @@ body.no-overflow {
     color: #ffd700
 }
 
+.tags {
+    color: #ffd700;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    font-size: 18px;
+    font-family: 'La Belle Aurore', cursive
+}
+
+.top-tags {
+    bottom: auto;
+    top: 0
+}
+
+#cboxClose {
+    display: none
+}
+
+#cboxTopRight,
+#cboxTopCenter,
+#cboxTopLeft,
+#cboxBottomRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxMiddleRight,
+#cboxMiddleLeft,
+#cboxContent {
+    background: 0 0;
+    border-radius: 5px
+}
+
+#cboxPrevious:before {
+    content: '←';
+    color: #ffd700;
+    font-size: 22px;
+    line-height: 1
+}
+
+#cboxPrevious {
+    position: fixed;
+    text-indent: 0;
+    outline: none;
+    font-size: 0;
+    top: 0;
+    right: auto;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 38, 39, .5);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#cboxNext:after {
+    content: '→';
+    color: #ffd700;
+    font-size: 22px;
+    line-height: 1
+}
+
+#cboxNext {
+    position: fixed;
+    outline: none;
+    font-size: 0;
+    text-indent: 0;
+    top: 0;
+    left: auto;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 38, 39, .5);
+    border-radius: 5px 0 0 5px;
+    justify-content: center
+}
+
+.container {
+    width: 100%;
+    will-change: contents;
+    height: 90%;
+    min-height: 566px;
+    position: absolute;
+    opacity: 0;
+    top: 5%;
+    margin: 0 auto;
+    z-index: 1;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d
+}
+
+.container.magicwall {
+    height: 100%;
+    top: 0
+}
+
+.error-info {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center
+}
+
+.error-info span {
+    font-size: 80px;
+    font-family: font-file-82132;
+    color: #ffd700;
+    font-weight: 400;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px
+}
+
+.error-info span span {
+    color: #fd0854
+}
+
+.error-info p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300
+}
+
+.text-zone p a span,
+.text-zone p a {
+    color: #ffd700;
+    text-decoration: underline
+}
+
+.text-zone p a:hover span,
+.text-zone p a:hover {
+    color: #fff
+}
+
+.text-zone h2 {
+    color: #fff;
+    font-size: 16px
+}
+
