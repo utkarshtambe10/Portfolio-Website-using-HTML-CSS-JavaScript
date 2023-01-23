@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*
+#ffd700
+#115173
+#053f5e
+#022c43
+*/
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'La Belle Aurore';
+	src: url('../fonts/LaBelleAurore.woff2') format('woff2'), url('../fonts/LaBelleAurore.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: font-file-82132;
+	src: url('../fonts/CoolveticaRg-Regular.woff2') format('woff2'), url('../fonts/CoolveticaRg-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.wp-pagenavi {
+	clear: both
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+	text-decoration: none;
+	border: 1px solid #bfbfbf;
+	padding: 3px 5px;
+	margin: 2px
+}
+
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+	border-color: #000
+}
+
+.wp-pagenavi span.current {
+	font-weight: 700
+}
+
+*,
+*:after,
+*:before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	font-smooth: antialiased;
+	text-rendering: optimizeLegibility
+}
+
+html {
+	font-size: 62.5%
+}
+
+body {
+	font: 300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #444
+}
+
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+body .post-article {
+	-webkit-touch-callout: text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text
+}
+
+body .post-article *::-moz-selection {
+	background: #ff0b56;
+	color: #fff
+}
+
+body .post-article *::selection {
+	background: #ff0b56;
+	color: #fff
+}
